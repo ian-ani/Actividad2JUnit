@@ -1,19 +1,20 @@
+package model;/* LIBRERIAS */
+
 import java.time.LocalDate;
 import java.util.*;
-
 import static java.util.Map.entry;
 
 public class DiasLluvia {
     /* ATRIBUTOS */
 
     // Dia-mes, true/false
-    private Map<LocalDate, Boolean> dias;
+    private Map<LocalDate, Boolean> dias = new HashMap<>();
 
     /* METODO TOSTRING */
 
     @Override
     public String toString() {
-        return "DiasLluvia{" +
+        return "model.DiasLluvia{" +
                 "dias=" + dias +
                 '}';
     }
@@ -21,11 +22,11 @@ public class DiasLluvia {
     /* OTROS METODOS */
 
     public boolean registroDia(int dia, int mes, boolean lluvia) {
-        // Crear objeto fecha
-        LocalDate fecha = LocalDate.of(LocalDate.now().getYear(), mes, dia);
-
-        // Probar a guardar la fecha (si puede true, si no false)
+        // Probar a guardar la fecha (si puede 'true', si no 'false')
         try {
+            // Crear objeto fecha
+            LocalDate fecha = LocalDate.of(LocalDate.now().getYear(), mes, dia);
+
             // Guardar fecha y si ha llovido o no
             dias.put(fecha, lluvia);
             return true;
