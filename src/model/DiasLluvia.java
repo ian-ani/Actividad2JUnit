@@ -37,11 +37,17 @@ public class DiasLluvia {
     }
 
     public boolean consultarDia(int dia, int mes) {
-        // Crear objeto fecha
-        LocalDate fecha = LocalDate.of(LocalDate.now().getYear(), mes, dia);
+        try {
+            // Crear objeto fecha
+            LocalDate fecha = LocalDate.of(LocalDate.now().getYear(), mes, dia);
 
-        // Obtener clave en base a la fecha y devolver el 'true' o 'false' almacenado
-        return dias.get(fecha);
+            // Obtener clave en base a la fecha y devolver el 'true' o 'false' almacenado
+            return dias.get(fecha);
+        } catch (Exception e) {
+            // No puede retornar que un dia es lluvioso si la fecha no es valida
+            System.out.println("Fecha no válida.");
+            return false;
+        }
     }
 
     public int contarDiasLluviosos() {
