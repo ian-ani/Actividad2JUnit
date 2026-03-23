@@ -23,7 +23,7 @@ public class DiasLluviaTest {
         diasLluvia.registroDia(24, 1, false);
         diasLluvia.registroDia(26, 4, true);
         diasLluvia.registroDia(19, 3, true);
-        diasLluvia.registroDia(16, 11, false);
+        diasLluvia.registroDia(16, 11, true);
     }
 
     @Test
@@ -46,14 +46,32 @@ public class DiasLluviaTest {
 
     @Test
     @DisplayName("Método que prueba la consulta de si un día fue lluvioso o no. Debe ser lluvioso.")
-    public void consultarDiaLluvioso() {
-        assertTrue(diasLluvia.consultarDia(12, 12));
+    public void consultarDiaTestLluvioso() {
+        assertTrue(diasLluvia.consultarDia(12, 11));
     }
 
     @Test
     @DisplayName("Método que prueba la consulta de si un día fue lluvioso o no. No debe ser lluvioso.")
-    public void consultarDiaNoLluvioso() {
+    public void consultarDiaTestNoLluvioso() {
         assertFalse(diasLluvia.consultarDia(30, 6));
+    }
+
+    @Test
+    @DisplayName("Método que prueba la suma total de días lluviosos.")
+    public void contarDiasLluviososTest() {
+        assertEquals(4, diasLluvia.contarDiasLluviosos());
+    }
+
+    @Test
+    @DisplayName("Método que prueba el trimestre con más días lluviosos.")
+    public void trimestreLluviosoTest() {
+        assertEquals(4, diasLluvia.trimestreLluvioso());
+    }
+
+    @Test
+    @DisplayName("Método que prueba cuál es el día más lluvioso del año.")
+    public void primerDiaLluviaTest() {
+        assertEquals(78, diasLluvia.primerDiaLluvia());
     }
 
     @AfterEach
