@@ -79,7 +79,6 @@ public class DiasLluvia {
             // Obtener mes
             int mes = fecha.getKey().getMonthValue();
 
-            // TODO: comprobar porque intellij llora
             // Rango de meses
             if (mes >= 1 && mes <= 3) {
                 // Primer trimestre: enero-marzo
