@@ -1,4 +1,6 @@
-package model;/* LIBRERIAS */
+package model;
+
+/* LIBRERIAS */
 
 import java.time.LocalDate;
 import java.util.*;
