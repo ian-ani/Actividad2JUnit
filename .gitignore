@@ -1,0 +1,10 @@
+# Binarios de Java
+
+*.class
+*.classpath
+
+# IntelliJ
+
+.idea
+out
+*.iml
