@@ -9,27 +9,6 @@ public class DiasLluvia {
     // Dia-mes, true/false
     private Map<LocalDate, Boolean> dias;
 
-    /* CONSTRUCTOR */
-
-    // TODO lo mismo esto me sobra luego
-    public DiasLluvia(Map<LocalDate, Boolean> dias) {
-        this.dias = dias;
-    }
-
-    /* GETTERS */
-
-    // TODO lo mismo esto me sobra luego
-    public Map<LocalDate, Boolean> getDias() {
-        return dias;
-    }
-
-    /* SETTERS */
-
-    // TODO lo mismo esto me sobra luego
-    public void setDias(Map<LocalDate, Boolean> dias) {
-        this.dias = dias;
-    }
-
     /* METODO TOSTRING */
 
     @Override
@@ -122,7 +101,7 @@ public class DiasLluvia {
         TreeMap<LocalDate, Boolean> diasOrdenados = new TreeMap<>(dias);
 
         // Recorrer Map y devolver el primer dia que encuentre con un 'true'
-        for (Map.Entry<LocalDate, Boolean> fecha : dias.entrySet()) {
+        for (Map.Entry<LocalDate, Boolean> fecha : diasOrdenados.entrySet()) {
             if (fecha.getValue()) {
                 // Guardar primer dia lluvioso del anno
                 primerDia = fecha.getKey().getDayOfYear();
